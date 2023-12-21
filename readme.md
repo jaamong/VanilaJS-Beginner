@@ -25,7 +25,7 @@ document.querySelector(.hello h1)
 
 <br>
 
-> Notice!! JavaScipt의 object 내부에 있는 property의 값을 변경할 수 있음 (특정 property들은 변경할 수 없음)
+> :bulb: JavaScipt의 object 내부에 있는 property의 값을 변경할 수 있음 (특정 property들은 변경할 수 없음)
 
 <br>
 
@@ -53,4 +53,21 @@ document.querySelector(.hello h1)
     listenr에는 event가 발생하면 호출할 function을 전달해주면 된다.
     중요한 점은 **function을 전달할 때 괄호를 작성하면 안됨!!!** 그래야 event가 발생했을 때 js가 대신 실행해줌. 
     
+<br>
 
+### listen 하고 싶은 event를 찾는 방법
+
+1. 구글에 찾고 싶은 element의 이름, html element, mdn(Mozilla Developer Network)에 검색
+    ```text
+    Ex. h1 html element mdn
+    ```
+
+2. 검색 후 링크에 `Web APIs` 문장이 포함된 페이지를 찾기
+3. 페이지에서 `event` 찾기
+
+또는 
+1. `console.dir(element)`로 콘솔에 출력하기
+2. 수많은 property 중에서 앞에 `on`이 붙어있는 것 찾기
+➯ 그것이 바로 `event listner`
+
+> :bulb: 해당 event listner를 사용할 때는 **`on`을 제외하고 사용**해야 함!  
