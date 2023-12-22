@@ -3,10 +3,10 @@ const h1 = document.querySelector("div.hello:first-child h1");  // `h1` is HTML 
 function handleh1Click() {
     const clickedClass = "clicked"
 
-    if (h1.className === clickedClass) {
-        h1.className = "";  // class 제거
+    if (h1.classList.contains(clickedClass)) { //class 존재 여부 확인
+        h1.classList.remove(clickedClass);  // class 제거
     } else {
-        h1.className = clickedClass;  // style.css에서 정의한 클래스 명
+        h1.classList.add(clickedClass);  // class 추가
     }
 }
 
