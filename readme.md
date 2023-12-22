@@ -101,4 +101,53 @@ document.querySelector(.hello h1)
 ### CSS in Javascript
 
 > style은 js 말고 css 에서 고치는 것이 좋다. 
- 
+
+
+
+#### 기존 class를 유지한 채로, class name을 수정하는 방법 ➯ `classList` 사용하기! 
+
+`className`은 이전 class 값은 고려하지 않고, 모든 걸 교체해버린다. 
+`classList`는 class들의 목록으로, 여러 함수를 지원해주는데 여러가지 작업을 할 수 있게끔 허용해준다. 
+
+<br>
+
+:small_blue_diamond: **.contains**
+
+`classList`의 함수 중 `.contains`는 인자로 넘겨준 class가 HTML element의 class에 포함되어 있는지 알려준다. 
+```javascript
+if (h1.classList.contains(clickedClass)) { // clickedClass가 있는지
+    ...
+}
+```
+<br>
+
+:small_blue_diamond: **.remove**
+
+인자로 넘겨준 class를 해당 element에서 제거한다.
+
+<br>
+
+:small_blue_diamond: **.add**
+
+인자로 넘겨준 class를 해당 element에 추가한다.
+
+<br>
+
+:small_blue_diamond: **.toggle**
+
+- 인자로 넘겨준 class가 있는지 확인한다.
+- 존재하면 제거(remove)하고, 그렇지 않으면 추가(add)한다.
+- 아래 코드를 toggle 함수가 수행한다.
+    ```javascript
+        //use toggle
+        h1.classList.toggle(className);
+
+        //not use toggle
+        if (h1.classList.contains(className)) { //class 존재 여부 확인
+            h1.classList.remove(className);  // class 제거
+        } else {
+            h1.classList.add(className);  // class 추가
+        }
+    ```
+
+
