@@ -71,3 +71,27 @@ document.querySelector(.hello h1)
 ➯ 그것이 바로 `event listner`
 
 > :bulb: 해당 event listner를 사용할 때는 **`on`을 제외하고 사용**해야 함!  
+
+<br>
+
+### window의 interface 또는 object
+
+> Window Events <br> https://developer.mozilla.org/ko/docs/Web/API/Window#%EC%9D%B4%EB%B2%A4%ED%8A%B8
+
+<br>
+
+#### event를 사용하는 두 가지 방법
+1. `element.addEventListner()`를 해주고, 원하는 type을 넘겨주는 것
+    ```javascript
+    element.addEventListner("click", function);
+    ```
+    이 방법은 나중에 `.removeEventListner()`를 통해서 event를 제거해줄 수 있다!
+2. `element.ontype` 
+    ```javascript
+    element.onclick = function;
+    Ex. 
+    ```
+
+<br>
+
+> :blub: `document.body`, `document.head`, `document.title` 은 가져올 수 있지만 `div` 같은 그 외 element들은 `querySelector`나 `getElementById`로 가져와야 한다!
