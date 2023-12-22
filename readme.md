@@ -95,3 +95,10 @@ document.querySelector(.hello h1)
 <br>
 
 > :blub: `document.body`, `document.head`, `document.title` 은 가져올 수 있지만 `div` 같은 그 외 element들은 `querySelector`나 `getElementById`로 가져와야 한다!
+
+<br>
+
+### CSS in Javascript
+
+> style은 js 말고 css 에서 고치는 것이 좋다. 
+ 
