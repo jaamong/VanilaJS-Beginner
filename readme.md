@@ -181,16 +181,8 @@ function onLoginSubmit(event) { // 따로 space를 만들지 않으면 어떠한
 
 loginForm.addEventListener("submit", onLoginSubmit); // 누군가 form을 submit하면 JS가 이 function을 호출하도록 하고 있다.
 ```
-모든 EventListener function의 첫 번째 argument는 항상 지금 막 벌어진 일들에 대한 정보가 된다. 이 정보는 JS가 제공한다.
+모든 EventListener function의 첫 번째 argument는 항상 지금 막 벌어진 일들에 대한 정보가 된다. 이 정보는 JS가 제공한다.<br>
 우리는 space만 제공하면 돼! argument 공간만 제공하면 JS가 알아서 방금 일어난 event에 대한 정보를 지닌 argument를 채워넣을 거야!
-
-<br>
-
-#### `console.log(info)`의 결과: 실행된 event에 관한 정보
-```javascript
-// event object
-SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#login-form, currentTarget: form#login-form, …}
-```
 
 <br>
 
@@ -200,3 +192,14 @@ SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#lo
     > **기본 행동**<br> 어떤 function에 대해 브라우저가 기본적으로 수행하는 동작<br>
     *Ex.* 누군가 form을 submit 하면 브라우저는 기본적으로 페이지를 새로고침 하도록 되어 있다 ➯ 새로 고침을 막는다!
 - `event object`는 기본적으로 제공되는 function을 갖고 있는데, 그게 바로 `preventDefault`
+
+
+<br>
+
+#### `console.log(info)`의 결과: 실행된 event에 관한 정보
+```javascript
+// event object
+SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#login-form, currentTarget: form#login-form, …}
+```
+
+
