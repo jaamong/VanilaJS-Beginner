@@ -153,3 +153,9 @@ if (h1.classList.contains(clickedClass)) { // clickedClass가 있는지
 <br>
 
 ## LOGIN
+
+> :star2: `input` 태그의 유효성 검사를 작동시키기 위해서는 `input`이 `form` 태그 안에 있어야 한다.
+
+> :star2: `input` 태그 안에 있는 `button`을 누르거나 type이 `submit`인 `input` 태그을 클릭하면, 작성한 form이 submit 된다. <br> ➯ form을 submit 할 때마다 **브라우저가 재시작(새로고침) 됨!**
+
+but, 우리는 form을 submit 할 때마다 브라우저를 새로고침 하고 싶지 않아. 어떻게 고치면 될까?
