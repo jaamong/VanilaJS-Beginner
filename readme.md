@@ -158,4 +158,45 @@ if (h1.classList.contains(clickedClass)) { // clickedClass가 있는지
 
 > :star2: `input` 태그 안에 있는 `button`을 누르거나 type이 `submit`인 `input` 태그을 클릭하면, 작성한 form이 submit 된다. <br> ➯ form을 submit 할 때마다 **브라우저가 재시작(새로고침) 됨!**
 
-but, 우리는 form을 submit 할 때마다 브라우저를 새로고침 하고 싶지 않아. 어떻게 고치면 될까?
+but, 우리는 form을 submit 할 때마다 브라우저를 새로고침 하고 싶지 않아. 어떻게 고치면 될까? <br>
+submit 이라는 event가 발생하는 걸 아예 막거나 중간에 개입해서 submit event가 발생했다는 걸 파악하고 싶어. <br>
+
+> :bulb: submit은 엔터를 누르거나 버튼을 클릭할 때 발생한다.
+
+<br>
+
+### EventListener function의 첫 번째 argument
+
+JS가 하게 될 일은(아래 작성한 코드가 하고 있는 일), 
+`onLoginSubmit` 함수의 첫 번째 argument로 발생한 일에 대해 네가 필요로 할 만한 정보들을 주는 것이다.
+```javascript
+function onLoginSubmit(event) { // 따로 space를 만들지 않으면 어떠한 정보도 받지 않음. 공간을 만들어 주면 JS에서 event를 채워줄 것.
+// 1. event가 발생할 때 브라우저가 function을 호출
+// 2. function을 호출할 때 argument로써 추가적인 정보를 가진 채로 호출한다.
+//   ->  like this : `function(event)`
+// 어떤 정보를 브라우저가 보여주고 있는지 알기 위해서 아래 코드 추가
+    event.preventDefault();
+    console.log(event);  // event object 출력
+}
+
+loginForm.addEventListener("submit", onLoginSubmit); // 누군가 form을 submit하면 JS가 이 function을 호출하도록 하고 있다.
+```
+모든 EventListener function의 첫 번째 argument는 항상 지금 막 벌어진 일들에 대한 정보가 된다. 이 정보는 JS가 제공한다.
+우리는 space만 제공하면 돼! argument 공간만 제공하면 JS가 알아서 방금 일어난 event에 대한 정보를 지닌 argument를 채워넣을 거야!
+
+<br>
+
+#### `console.log(info)`의 결과: 실행된 event에 관한 정보
+```javascript
+// event object
+SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#login-form, currentTarget: form#login-form, …}
+```
+
+<br>
+
+:small_blue_diamond: **.preventDefault**
+
+- 어떤 event의 **기본 행동**이든지 발생되지 않도록 막는다.
+    > **기본 행동**<br> 어떤 function에 대해 브라우저가 기본적으로 수행하는 동작<br>
+    *Ex.* 누군가 form을 submit 하면 브라우저는 기본적으로 페이지를 새로고침 하도록 되어 있다 ➯ 새로 고침을 막는다!
+- `event object`는 기본적으로 제공되는 function을 갖고 있는데, 그게 바로 `preventDefault`
