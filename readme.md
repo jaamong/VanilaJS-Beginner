@@ -205,3 +205,5 @@ SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#lo
 <br>
 
 > :bulb: alert는 모든 동작을 막는다. "확인 / OK" 버튼을 눌러야만 링크로 이동.
+
+> :star2: `localStorage.get(key)`을 했을 때 해당하는 값이 없으면 `null`을 반환한다.
