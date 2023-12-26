@@ -221,3 +221,36 @@ JS에는 interval 기능이 이미 내장되어 있다. 이런 기능을 제공�
 `setInterval()`은 두 개의 argument를 받는다. 
 1. 실행하고자 하는 function
 2. 호출되는 function의 간격 (단위: ms)
+
+<br>
+
+### Timeouts
+
+> :bulb: 일정 시간이 흐른 뒤에 함수를 한 번만 호출하고 싶어! <br> ➯ `setTimeout()` 함수
+
+`setTimeout()`은 두 개의 argument를 받는다.
+1. 호출하려고 하는 function
+2. 얼마나 기다릴지 (단위: ms)
+
+```javascript
+setTimeout(getclock, 5000);  // 5초 뒤 getclock 함수 호출
+```
+
+<br>
+
+
+### Dates
+
+날짜와 시간을 얻거나 생성하고 싶다면 `Date` 객체를 사용하자.
+```javascript
+const date = new Date();
+
+date.getHours();
+date.getMinutes();
+date.getSeconds();
+
+date.getDate();
+date.getDay();
+date.getMonth();
+date.getFullYear();
+```
