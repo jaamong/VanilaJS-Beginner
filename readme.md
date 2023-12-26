@@ -202,4 +202,6 @@ loginForm.addEventListener("submit", onLoginSubmit); // 누군가 form을 submit
 SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#login-form, currentTarget: form#login-form, …}
 ```
 
+<br>
 
+> :bulb: alert는 모든 동작을 막는다. "확인 / OK" 버튼을 눌러야만 링크로 이동.

@@ -7,4 +7,3 @@ function onLoginSubmit(event) { // 따로 space를 만들지 않으면 어떠한
 }
 
 loginForm.addEventListener("submit", onLoginSubmit);  // form의 submit event 감지
-
