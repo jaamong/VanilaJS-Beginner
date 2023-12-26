@@ -238,7 +238,6 @@ setTimeout(getclock, 5000);  // 5초 뒤 getclock 함수 호출
 
 <br>
 
-
 ### Dates
 
 날짜와 시간을 얻거나 생성하고 싶다면 `Date` 객체를 사용하자.
@@ -254,3 +253,16 @@ date.getDay();
 date.getMonth();
 date.getFullYear();
 ```
+
+<br>
+
+### PadStart
+
+`padStart()`는 string에 쓸 수 있는 function이다. 해당 함수를 이용하여 padding을 추가한다.
+1. 채울 길이
+2. 채울 길이가 아닌 경우, 적용할 채울 문자
+```javascript
+"1".padStart(2, "0");  // string의 길이를 2로 만든다. 길이가 2가 아닌 경우 앞에 "0"을 추가한다.
+```
+
+반대의 기능을 하는 함수로 `padEnd()`가 있다. 해당 함수는 뒤쪽에 padding을 추가한다.
