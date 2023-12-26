@@ -207,3 +207,17 @@ SubmitEvent {isTrusted: true, submitter: button, type: 'submit', target: form#lo
 > :bulb: alert는 모든 동작을 막는다. "확인 / OK" 버튼을 눌러야만 링크로 이동.
 
 > :star2: `localStorage.get(key)`을 했을 때 해당하는 값이 없으면 `null`을 반환한다.
+
+<br>
+
+## CLOCK
+
+### Intervals
+
+> :bulb: **interval** <br> '매번' 일어나야 하는 무언가 <br> Ex. '매 2초' ➯ interval 
+
+JS에는 interval 기능이 이미 내장되어 있다. 이런 기능을 제공하는 tool이 바로 `setInterval()`이다. 
+
+`setInterval()`은 두 개의 argument를 받는다. 
+1. 실행하고자 하는 function
+2. 호출되는 function의 간격 (단위: ms)
