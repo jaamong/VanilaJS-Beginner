@@ -284,3 +284,19 @@ Math.random() * 10  // 0에서 10 사이의 숫자를 얻을 수 있음
 - `Math.round()`: 입력값을 반올림한 수와 가장 가까운 정수 값 반환 (Ex: 1.4 → 1, 1.5 → 2)
 - `Math.ceil()`: 숫자를 천장(ceil)까지 높여준다. (Ex: 1.1 → 2, 1.01 → 2)
 - `Math.floor()`: 숫자를 바닥(floor)까지 내려준다. (Ex: 1.9 → 1, 1.99999999 → 1) 
+
+<br>
+
+### Element.appendChild(), Element.prependChild()
+
+#### `appendChild()` 
+
+- appendChild는 DOM 메서드이므로 생성되어 있는 요소만 추가 가능
+    - 태그를 먼저 생성해놓고, 태그를 추가할 때 사용
+    - 텍스트의 경우에도 TextNode로 노드를 생성한 후 추가해야 함
+- 추가된 요소는 맨 마지막에 위치하게 됨
+
+#### `prepend()`
+
+- append와 달리 맨 앞에 추가됨
+- append 처럼 문자열, 요소 추가 가능 
