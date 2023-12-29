@@ -316,6 +316,17 @@ function deleteToDo(event) {
     console.dir(Event.target.parentElement);  // 이제 어떤 button이 클릭되었는지 알 수 있다!
 }
 ```
-<br>
 
 > :star2: `event.target`은 클릭된 HTML element이다. 모든 HTML element에는 하나 이상의 property가 있다. 
+
+<br>
+
+### Saving To Dos
+
+> :bulb: localStorage에는 텍스트만 넣을 수 있다. 
+
+브라우저는 JS의 objects나 array나 어떤 것이든 string으로 바꿔주는 기능을 가지고 있다. 
+```javascript
+const temp = {name:"temp"};
+JSON.stringify(temp);  // object를 string으로 변환
+```
