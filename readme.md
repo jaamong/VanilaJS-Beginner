@@ -300,3 +300,22 @@ Math.random() * 10  // 0에서 10 사이의 숫자를 얻을 수 있음
 
 - append와 달리 맨 앞에 추가됨
 - append 처럼 문자열, 요소 추가 가능 
+
+<br>
+
+## TO DO LIST
+
+### Deleteing To Dos
+
+> :bulb: 여러 개의 `ul`의 delete중 하나를 클릭했을 때 해당 `ul`를 어떻게 식별할 수 있을까?
+
+`event`는 여러 property를 가지는데, 어떤 button이 클릭되었는지 알려준다.
+```javascript
+function deleteToDo(event) {
+    console.dir(event.target);  // 여기서 parentNode 또는 parentElement를 알고싶어 (parentElement: 클릭된 element의 부모)
+    console.dir(Event.target.parentElement);  // 이제 어떤 button이 클릭되었는지 알 수 있다!
+}
+```
+<br>
+
+> :star2: `event.target`은 클릭된 HTML element이다. 모든 HTML element에는 하나 이상의 property가 있다. 
