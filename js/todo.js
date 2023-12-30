@@ -13,6 +13,9 @@ function saveToDos() {
 function deleteToDo(event) {
     const li = event.target.parentElement;  // button의 parent
     li.remove();
+
+    toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));  // li.id type is string
+    saveToDos();  // toDos가 변경되었으므로 localStorage에도 반영
 }
 
 function paintToDo(newTodo) {

@@ -360,3 +360,22 @@ JS는 EventListener function의 event object처럼 `item`을 그냥 제공해준
 ```javascript
 arr.forEach((item) => console.log("this is the turn of", item)); // => : arrow
 ```
+
+<br>
+
+#### `.filter()`
+
+`filter` 함수가 `true`를 반환하면 filter가 적용된 array에서 해당 item이 유지된다. 즉, `false`인 경우 array에서 해당 item을 제외시킨다.
+```javascript
+function coolFilter(item) {  //should return true
+    return item !== 3; 
+}
+
+[1, 2, 3, 4].filter(coolFilter);  // [1, 2, 4]
+```
+위 코드를 실행하면 3이 아닌 경우에 `true`가 반환되므로, array는 [1, 2, 4]가 된다. 위 코드를 간단하게 아래처럼 작성할 수 있다.
+```javascript
+[1, 2, 3, 4,].filter(item => item !== 3);
+```
+
+> :bulb: `.filter`는 적용된 array를 변경하지 않는다.
