@@ -17,9 +17,10 @@ function deleteToDo(event) {
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id;
 
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
 
     const button = document.createElement("button");
     button.innerText = "❌";
@@ -36,9 +37,13 @@ function handleToDoSubmit(event) {
     const newTodo = toDoInput.value;
     toDoInput.value = "";  // 입력하고 엔터를 입력하면 입력 상자 비우기
 
-    paintToDo(newTodo);
+    const newTodoObj = {  // 각 todo를 식별하기 위해 id 값 주기
+        id: Date.now(),
+        text: newTodo
+    }
 
-    toDos.push(newTodo);
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
