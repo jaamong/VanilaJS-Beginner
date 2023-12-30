@@ -321,12 +321,42 @@ function deleteToDo(event) {
 
 <br>
 
-### Saving To Dos
+### Saving and Loading To Dos
 
 > :bulb: localStorage에는 텍스트만 넣을 수 있다. 
+
+<br>
+
+#### `JSON.stringify` and `JSON.parse`
 
 브라우저는 JS의 objects나 array나 어떤 것이든 string으로 바꿔주는 기능을 가지고 있다. 
 ```javascript
 const temp = {name:"temp"};
-JSON.stringify(temp);  // object를 string으로 변환
+JSON.stringify(temp);  // object -> string
+```
+
+그리고 string을 JS objects로 만들 수 있다.
+```javascript
+JSON.parse(string);  // string -> object 
+```
+
+<br>
+
+#### `.forEach()`
+
+JS는 array의 각 요소들에 대해서 function을 수행할 수 있게 해준다.
+```javascript
+function sayHello(item) {
+    console.log("this is the turn off", item);
+}
+
+const arr = [...];
+
+arr.forEach(sayHello);
+```
+JS는 EventListener function의 event object처럼 `item`을 그냥 제공해준다. 이 item은 배열의 각 요소를 의미한다. 
+
+위 방법에서 더 간단하게 작성할 수 있다. 아래의 방법을 `arrow function`이라고 한다.
+```javascript
+arr.forEach((item) => console.log("this is the turn of", item)); // => : arrow
 ```
