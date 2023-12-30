@@ -4,7 +4,7 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];  // 브라우저가 시작될 때 빈 배열 상태, 업데이트를 위해 let으로 수정
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -44,14 +44,10 @@ function handleToDoSubmit(event) {
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-function sayHello(item) {
-    console.log("this is the turn off", item);
-}
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if (saveToDos) { 
+if (savedToDos) {
     const parsedToDos = JSON.parse(savedToDos);
-    //parsedToDos.forEach(sayHello);
-    parsedToDos.forEach((item) => console.log("this is the turn of", item));
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);  // 배열의 각 요소가 paintToDo 함수로 전달됨
 }
