@@ -379,3 +379,78 @@ function coolFilter(item) {  //should return true
 ```
 
 > :bulb: `.filter`는 적용된 array를 변경하지 않는다.
+
+<br>
+
+## Weather
+
+### Geolocation
+
+사용자의 위치를 가져오자!
+```javascript
+navigator.geolocation.getCurrentPosition(success, error);
+```
+
+각 success 함수와 error 함수에 파라미터를 만들 자리를 만들어주자. 
+```javascript
+function success(position) {
+    console.log(position); 
+}
+```
+`position`에는 브라우저를 기준으로 위치와 관련된 여러가지 정보가 담겨있다. 
+
+> :link: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition
+
+<br>
+
+### Weather API
+
+> :link: Current Weather Data: https://openweathermap.org/current
+
+> :link: API KEY: https://home.openweathermap.org/api_keys
+
+<br>
+
+**`fetch`** 를 사용해서 URL을 호출할 거야!
+```javascript
+fetch(url);  // fetch를 사용하여 URL로 요청을 날림.
+```
+
+1. 요청 후, 크롬 개발자도구의 `Network` 탭을 확인
+2. `Name` 탭에서 요청한 URL 클릭
+3. `Preview` 클릭하여 **결과** 확인
+
+<br>
+
+> :star2: `fetch`는 **`promise`**
+
+`promise`는 당장 뭔가 일어나지 않고, 시간이 좀 걸린 뒤에 일어나는 것이다. <br> 예를 들어, 서버에 뭔가 물어보고 응답받는 데 5분이 걸린다고 해보자. 그러면 서버의 응답을 기다려야 한다. <br> 그래서 **`then`** 을 사용해야 된다. 
+
+1. URL을 fetch하고
+    ```javascript
+    fetch(url);
+    ```
+2. response를 받아야 한다. 
+    ```javascript
+    fetch(url).then(response);
+    ```
+3. 그리고 response의 json을 얻어야 한다.
+    ```javascript
+    fetch(url).then(resposne => response.json());
+    ```
+4. 개발자도구 > Network > Name - URL > Preview의 내용이 전부 JSON이다.
+5. 내용을 추출했다면, data를 얻는다. 
+    ```javascript
+    fetch(url)
+        .then(response => response.json())
+        .then(data);
+    ```
+    얻은 data로 `console.log()`를 통해 우리가 원하는 데이터를 볼 수 있다.
+    ```javascript
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.~~~)
+        });
+    ```
+    Preview의 data 정보를 활용하여 원하는 데이터를 사용하면 된다.
