@@ -74,7 +74,7 @@ document.querySelector(.hello h1)
     ```
     - js에 무슨 event를 listen하고 싶은지 알려줘야 함!
         ```javascript
-        element.addEventListner("click")  // click event를 listen
+        element.addEventListener("click")  // click event를 listen
         ```
 3. click 했다면 무언가를 해줘야 겠지요.
     ```javascript
@@ -98,9 +98,9 @@ document.querySelector(.hello h1)
 또는 
 1. `console.dir(element)`로 콘솔에 출력하기
 2. 수많은 property 중에서 앞에 `on`이 붙어있는 것 찾기
-➯ 그것이 바로 `event listner`
+➯ 그것이 바로 `event listener`
 
-> :bulb: 해당 event listner를 사용할 때는 **`on`을 제외하고 사용**해야 함!  
+> :bulb: 해당 event listener를 사용할 때는 **`on`을 제외하고 사용**해야 함!  
 
 <br>
 
@@ -111,11 +111,11 @@ document.querySelector(.hello h1)
 <br>
 
 #### event를 사용하는 두 가지 방법
-1. `element.addEventListner()`를 해주고, 원하는 type을 넘겨주는 것
+1. `element.addEventListener()`를 해주고, 원하는 type을 넘겨주는 것
     ```javascript
-    element.addEventListner("click", function);
+    element.addEventListener("click", function);
     ```
-    이 방법은 나중에 `.removeEventListner()`를 통해서 event를 제거해줄 수 있다!
+    이 방법은 나중에 `.removeEventListener()`를 통해서 event를 제거해줄 수 있다!
 2. `element.ontype` 
     ```javascript
     element.onclick = function;
@@ -124,7 +124,7 @@ document.querySelector(.hello h1)
 
 <br>
 
-> :blub: `document.body`, `document.head`, `document.title` 은 가져올 수 있지만 `div` 같은 그 외 element들은 `querySelector`나 `getElementById`로 가져와야 한다!
+> :bulb: `document.body`, `document.head`, `document.title` 은 가져올 수 있지만 `div` 같은 그 외 element들은 `querySelector`나 `getElementById`로 가져와야 한다!
 
 <br>
 
